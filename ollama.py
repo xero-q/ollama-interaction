@@ -4,6 +4,17 @@ from chatai import ChatAI
 
 class OllamaChatAI(ChatAI):
     def get_response(self, user_prompt: str) -> str:
+        """ Get response from Ollama model.
+        This method sends a request to the Ollama API with the user's prompt
+        and retrieves the generated response.
+        It uses the Mistral model for generating responses.
+
+        Args:
+            user_prompt (str): The user's input prompt.
+
+        Returns:
+            str: The AI's response.
+        """
         url = "http://localhost:11434/api/generate"
         headers = {"Content-Type": "application/json"}
         payload = {
