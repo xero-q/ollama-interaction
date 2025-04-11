@@ -36,15 +36,16 @@ ai = OllamaChatAI()
 
 # Bucle principal de interacción con el usuario
 print("Inicia la conversación con la IA (escribe 'exit' para salir).")
-while True:
+continue_loop = True
+while continue_loop:
     print("Input: ", end="")
     user_input = input()
 
     if user_input.lower() == "exit":
-        break  # Salir del bucle si el usuario escribe 'exit'
-
-    # Obtener y mostrar la respuesta de la IA
-    ai_response = ai.get_response(user_input)
-    print("Response: ", ai_response)
+        continue_loop = False
+    else:
+        # Obtener y mostrar la respuesta de la IA
+        ai_response = ai.get_response(user_input)
+        print("Response: ", ai_response)
 
 print("Saliendo del programa.")
